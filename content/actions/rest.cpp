@@ -1,5 +1,5 @@
 #include "rest.h"
 
-Result Rest::perform(Engine&, std::shared_ptr<Entity>) {
+Result Rest::perform(Engine& engine, std::shared_ptr<Entity>) {
     return success();
 }

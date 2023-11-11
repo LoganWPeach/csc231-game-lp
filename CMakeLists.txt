@@ -8,5 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_subdirectory(engine)
 add_subdirectory(content)
 
-add_executable(game main.cpp)
+add_executable(game main.cpp
+        content/actions/move.h
+        content/actions/move.cpp)
 target_link_libraries(game PUBLIC engine entities)
