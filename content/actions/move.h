@@ -1,5 +1,6 @@
 #include "action.h"
 #include "vec.h"
+#include "dungeon.h"
 
 class Move : public Action {
 public:

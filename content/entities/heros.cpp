@@ -19,6 +19,15 @@ namespace Heros {
         if ((key == "W") || (key == "Up")) {
             return std::make_unique<Move>(Vec{0,1});
         }
+        if ((key == "A") || (key == "Left")) {
+            return std::make_unique<Move>(Vec{-1,0});
+        }
+        if ((key == "S") || (key == "Down")) {
+            return std::make_unique<Move>(Vec{0,-1});
+        }
+        if ((key == "D") || (key == "Right")) {
+            return std::make_unique<Move>(Vec{1,0});
+        }
         return nullptr;
     }
 }
