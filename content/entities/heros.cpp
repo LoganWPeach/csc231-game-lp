@@ -3,6 +3,7 @@
 #include "engine.h"
 #include "rest.h"
 #include "move.h"
+#include "closedoor.h"
 
 namespace Heros {
 
@@ -27,6 +28,9 @@ namespace Heros {
         }
         if ((key == "D") || (key == "Right")) {
             return std::make_unique<Move>(Vec{1,0});
+        }
+        if (key == "C") {
+            return std::make_unique<Closedoor>();
         }
         return nullptr;
     }

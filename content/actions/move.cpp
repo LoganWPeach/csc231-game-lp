@@ -11,6 +11,7 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     if (locationtile.is_wall() || locationtile.has_door() || locationtile.has_entity()) {
         return failure();
     }
+
     else {
         entity->move_to(location);
         return success();
