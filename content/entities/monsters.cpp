@@ -9,6 +9,7 @@
 namespace Monsters {
     void make_orc(std::shared_ptr<Entity> monster) {
         monster->set_sprite("orc");
+        monster->set_max_health(10);
         monster->behavior = behavior;
     }
     std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {

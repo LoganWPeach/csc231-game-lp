@@ -1,6 +1,9 @@
 #include "hit.h"
 #include "die.h"
 
+Hit::Hit(Entity& entity, int damage)
+    :Event{1}, entity(entity), damage(damage) {}
+
 void Hit::execute(Engine& engine) {
     entity.take_damage(damage);
 }

@@ -4,12 +4,15 @@
 #include "rest.h"
 #include "move.h"
 #include "closedoor.h"
+#include "bow.h"
 
 namespace Heros {
 
     void make_knight(std::shared_ptr<Entity> entity) {
         entity->set_sprite("knight");
+        entity->set_max_health(100);
         entity->behavior = behavior;
+        entity->set_weapon(std::make_shared<Bow>(10));
     }
 
     std::unique_ptr<Action> behavior(Engine& engine, Entity&) {
