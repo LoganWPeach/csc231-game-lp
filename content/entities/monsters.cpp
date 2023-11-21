@@ -12,6 +12,16 @@ namespace Monsters {
         monster->set_max_health(10);
         monster->behavior = behavior;
     }
+    void make_skeleton(std::shared_ptr<Entity> monster) {
+        monster->set_sprite("skeleton");
+        monster->set_max_health(5);
+        monster->behavior = behavior;
+    }
+    void make_demon(std::shared_ptr<Entity> monster) {
+        monster->set_sprite("demon");
+        monster->set_max_health(50);
+        monster->behavior = behavior;
+    }
     std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {
         // if visible to hero, calculate path and move towards hero
         if (engine.hero && entity.is_visible()) {
