@@ -15,7 +15,12 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
         return failure();
     }
     else if (locationtile.has_entity()) {
-        return alternative(Attack(*locationtile.entity));
+        if (entity->get_team() != locationtile.entity->get_team()) {
+            return alternative(Attack(*locationtile.entity));
+        }
+        else {
+            return alternative(Rest());
+        }
     }
     else if (locationtile.has_door() && !locationtile.door->is_open()) {
         return alternative(Opendoor(direction));
