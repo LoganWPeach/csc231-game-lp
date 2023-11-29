@@ -2,7 +2,7 @@
 #include "die.h"
 
 Hit::Hit(Entity& entity, int damage)
-    :Event{2}, entity(entity), damage(damage) {}
+    :entity(entity), damage(damage) {}
 
 void Hit::execute(Engine& engine) {
     entity.take_damage(damage);

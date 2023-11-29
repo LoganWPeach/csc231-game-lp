@@ -10,7 +10,7 @@
 Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     entity->change_direction(direction);
     Vec location = entity->get_position() + direction;
-    Tile locationtile = engine.dungeon.get_tile(location);
+    Tile& locationtile = engine.dungeon.get_tile(location);
     if (locationtile.is_wall()) {
         return failure();
     }
