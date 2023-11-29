@@ -1,3 +1,5 @@
+#include "bigsword.h"
+#include "cleaver.h"
 #include "monsters.h"
 #include "engine.h"
 #include "entity.h"
@@ -11,6 +13,7 @@ namespace Monsters {
         monster->set_sprite("orc");
         monster->set_max_health(10);
         monster->behavior = behavior;
+        monster->set_weapon(std::make_shared<Cleaver>(5));
     }
     void make_skeleton(std::shared_ptr<Entity> monster) {
         monster->set_sprite("skeleton");
@@ -21,6 +24,7 @@ namespace Monsters {
         monster->set_sprite("demon");
         monster->set_max_health(50);
         monster->behavior = behavior;
+        monster->set_weapon(std::make_shared<Bigsword>(15));
     }
     std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {
         // if visible to hero, calculate path and move towards hero

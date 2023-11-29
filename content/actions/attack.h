@@ -7,5 +7,5 @@ public:
     Result perform(Engine& engine, std::shared_ptr<Entity> entity) override;
 
 private:
-    Entity defender;
+    Entity& defender;
 };

@@ -1,6 +1,8 @@
 add_library(weapons
   bite.cpp
         bow.cpp
+        cleaver.cpp
+        bigsword.cpp
 )
 
 target_include_directories(weapons PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
