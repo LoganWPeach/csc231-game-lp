@@ -1,10 +1,11 @@
 #include "heros.h"
-#include "entity.h"
-#include "engine.h"
-#include "rest.h"
-#include "move.h"
-#include "closedoor.h"
 #include "bow.h"
+#include "castlightning.h"
+#include "closedoor.h"
+#include "engine.h"
+#include "entity.h"
+#include "move.h"
+#include "rest.h"
 
 namespace Heros {
 
@@ -34,6 +35,9 @@ namespace Heros {
         }
         if (key == "C") {
             return std::make_unique<Closedoor>();
+        }
+        if (key == "L") {
+            return std::make_unique<CastLightning>();
         }
         return nullptr;
     }

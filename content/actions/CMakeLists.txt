@@ -1,6 +1,7 @@
 add_library(actions
   rest.cpp
         closedoor.cpp
+        castlightning.cpp
         opendoor.cpp
         wander.cpp
         attack.cpp

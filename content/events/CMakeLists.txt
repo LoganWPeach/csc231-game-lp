@@ -2,6 +2,7 @@ add_library(events
   die.cpp
         hit.cpp
         updatefov.cpp
+        lightning.cpp
         thrust.cpp
         swing.cpp
 )
