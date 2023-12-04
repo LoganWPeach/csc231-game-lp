@@ -1,5 +1,6 @@
 add_library(events
-  die.cpp
+        audioevent.cpp
+        die.cpp
         hit.cpp
         updatefov.cpp
         lightning.cpp

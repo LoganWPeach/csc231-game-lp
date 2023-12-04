@@ -38,4 +38,6 @@ const Sprite& Door::get_sprite() const {
         return horizontal;
     }
 }
-
+const Tile& Door::get_tile() const {
+    return tile;
+}
