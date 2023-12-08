@@ -8,7 +8,9 @@
 #include "lightning.h"
 
 Bow::Bow(int damage)
-    :Weapon{"bow", damage} {}
+    :Weapon{"bow", damage} {
+    sprite.shift.x -= 25;
+}
 
 void Bow::use(Engine& engine, Entity& attacker, Entity& defender) {
     Vec direction = defender.get_position() - attacker.get_position();

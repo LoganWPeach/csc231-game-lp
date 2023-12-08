@@ -1,4 +1,5 @@
 add_library(events
+        arrow.cpp
         audioevent.cpp
         die.cpp
         hit.cpp

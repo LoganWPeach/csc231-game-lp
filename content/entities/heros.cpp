@@ -1,5 +1,5 @@
 #include "heros.h"
-#include "bow.h"
+#include "sword.h"
 #include "castlightning.h"
 #include "closedoor.h"
 #include "engine.h"
@@ -13,7 +13,7 @@ namespace Heros {
         entity->set_sprite("knight");
         entity->set_max_health(100);
         entity->behavior = behavior;
-        entity->set_weapon(std::make_shared<Bow>(10));
+        entity->set_weapon(std::make_shared<Sword>(10));
     }
 
     std::unique_ptr<Action> behavior(Engine& engine, Entity&) {

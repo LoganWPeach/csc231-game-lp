@@ -5,6 +5,7 @@ knife 293 18 6 13
 spear 293 177 6 30
 
 bow 325 180 7 25
+bow_drawn 340 180 11 25
 arrow 308 186 7 21
 
 sword 323 26 10 21

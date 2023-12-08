@@ -1,12 +1,14 @@
+#include "monsters.h"
+
 #include "bigsword.h"
 #include "cleaver.h"
-#include "monsters.h"
 #include "engine.h"
 #include "entity.h"
-#include "rest.h"
+#include "knife.h"
 #include "move.h"
-#include "wander.h"
 #include "randomness.h"
+#include "rest.h"
+#include "wander.h"
 
 namespace Monsters {
     void make_orc(std::shared_ptr<Entity> monster) {
@@ -19,6 +21,7 @@ namespace Monsters {
         monster->set_sprite("skeleton");
         monster->set_max_health(5);
         monster->behavior = behavior;
+        monster->set_weapon(std::make_shared<Knife>(2));
     }
     void make_demon(std::shared_ptr<Entity> monster) {
         monster->set_sprite("demon");
