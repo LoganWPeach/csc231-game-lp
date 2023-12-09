@@ -47,3 +47,11 @@ double distance(const Vec& a, const Vec& b) {
     auto difference = a - b;
     return std::sqrt(std::pow(difference.x, 2) + std::pow(difference.y, 2));
 }
+Vec coordinate(Vec input) {
+    if (input.x != 0) {
+        input.x = abs(input.x)/input.x;
+    }
+    if (input.y != 0) {
+        input.y = abs(input.y)/input.y;
+    }
+}

@@ -23,6 +23,8 @@ std::ostream& operator<<(std::ostream& os, const Vec& vec);
 
 double distance(const Vec& a, const Vec& b);
 
+// Returns coordinate vector of input; Anything greater than 1 will be reduced to 1, anything less than -1 will be reduced to -1.
+Vec coordinate(Vec input);
 
 namespace std {
     template<> struct hash<Vec> {

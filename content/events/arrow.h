@@ -7,13 +7,14 @@
 #include "vec.h"
 
 class Arrow : public Event {
-    Arrow(Entity& source, Sprite& sprite, Vec direction);
+public:
+    Arrow(Tile origin, Vec distance);
     void execute(Engine& engine) override;
     void when_done(Engine& engine) override;
 
 private:
-    Entity source;
     Sprite sprite;
     Tile origin;
     Vec direction;
+    Vec distance;
 };
