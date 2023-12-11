@@ -54,4 +54,5 @@ Vec coordinate(Vec input) {
     if (input.y != 0) {
         input.y = abs(input.y)/input.y;
     }
+    return input;
 }
