@@ -19,8 +19,7 @@ Result Shoot::perform(Engine& engine, std::shared_ptr<Entity> entity) {
 
     engine.events.create_event<Arrow>(engine.dungeon.get_tile(entity->get_position()), dis);
     if (t.has_entity()) {
-        auto defender = *t.entity;
-        entity->get_weapon()->use(engine, *entity, defender);
+        entity->get_weapon()->use(engine, *entity, *t.entity);
     }
     return success();
 }

@@ -5,7 +5,7 @@
 #include "entity.h"
 
 int main() {
-    try {
+
         Settings settings{"settings.txt"};
         Engine engine{settings};
 
@@ -28,7 +28,7 @@ int main() {
         Monsters::make_demon(demon);
         engine.run();
     }
-    catch (std::exception& e) {
-        std::cout << e.what() << '\n';
-    }
-}
+    //catch (std::exception& e) {
+        //std::cout << e.what() << '\n';
+
+
