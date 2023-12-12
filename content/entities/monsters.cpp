@@ -23,7 +23,7 @@ namespace Monsters {
     void make_orc_ranged(std::shared_ptr<Entity> monster) {
         monster->set_sprite("orc_masked");
         monster->set_max_health(10);
-        monster->behavior = behavior2;
+        monster->behavior = behavior;
         monster->set_weapon(std::make_shared<Bow>(5));
     }
     void make_skeleton(std::shared_ptr<Entity> monster) {
@@ -75,9 +75,8 @@ namespace Monsters {
                 int ay = abs((engine.hero->get_position().y - entity.get_position().y));
                 Vec px = coordinate(Vec(engine.hero->get_position().x - entity.get_position().x, 0));
                 Vec py = coordinate(Vec(0, engine.hero->get_position().y - entity.get_position().y));
-                Tile tilecheck{};
                 if (ax > ay) {
-                    tilecheck = engine.dungeon.get_tile(entity.get_position() + py);
+                    Tile& tilecheck = engine.dungeon.get_tile(entity.get_position() + py);
                     if (tilecheck.has_entity() || tilecheck.is_wall()) {
                         return std::make_unique<Move>(direction);
                     }
@@ -85,8 +84,8 @@ namespace Monsters {
                         return std::make_unique<Move>(py);
                     }
                 }
-                if (ay > ax) {
-                    tilecheck = engine.dungeon.get_tile(entity.get_position() + px);
+                else if (ay > ax) {
+                    Tile& tilecheck = engine.dungeon.get_tile(entity.get_position() + px);
                     if (tilecheck.has_entity() || tilecheck.is_wall()) {
                         return std::make_unique<Move>(direction);
                     }
@@ -94,7 +93,7 @@ namespace Monsters {
                         return std::make_unique<Move>(px);
                     }
                 }
-                if (ax == ay) {
+                else { // (ax == ay)
                     return std::make_unique<Move>(direction);
                 }
             }

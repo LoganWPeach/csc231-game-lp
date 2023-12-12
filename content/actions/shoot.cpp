@@ -17,7 +17,7 @@ Result Shoot::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     }
     Vec dis = curr - entity->get_position();
 
-    engine.events.create_event<Arrow>(engine.dungeon.get_tile(entity->get_position()), dis);
+    // engine.events.create_event<Arrow>(engine.dungeon.get_tile(entity->get_position()), dis);
     if (t.has_entity()) {
         entity->get_weapon()->use(engine, *entity, *t.entity);
     }

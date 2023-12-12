@@ -6,8 +6,10 @@ Arrow::Arrow(Tile origin, Vec distance) : origin{origin}, direction{distance}, d
 }
 
 void Arrow::execute(Engine& engine) {
+
     if (frame_count == 0) {
         number_of_frames = distance.x + distance.y;
+
     }
     sprite.shift.x += (direction.x)*16;
     sprite.shift.y += (direction.y)*16;
