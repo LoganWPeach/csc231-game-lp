@@ -8,13 +8,13 @@
 
 class Arrow : public Event {
 public:
-    Arrow(Tile origin, Vec distance);
+    Arrow(Vec position, Vec distance);
     void execute(Engine& engine) override;
     void when_done(Engine& engine) override;
 
 private:
     Sprite sprite;
-    Tile origin;
+    Vec position;
     Vec direction;
     Vec distance;
 };

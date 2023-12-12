@@ -1,11 +1,12 @@
 #include "heros.h"
-#include "sword.h"
 #include "castlightning.h"
 #include "closedoor.h"
 #include "engine.h"
 #include "entity.h"
 #include "move.h"
 #include "rest.h"
+#include "shoot.h"
+#include "sword.h"
 
 namespace Heros {
 
@@ -16,7 +17,7 @@ namespace Heros {
         entity->set_weapon(std::make_shared<Sword>(10));
     }
 
-    std::unique_ptr<Action> behavior(Engine& engine, Entity&) {
+    std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {
         std::string key = engine.input.get_last_keypress();
         if (key == "R") {
             return std::make_unique<Rest>();
@@ -38,6 +39,9 @@ namespace Heros {
         }
         if (key == "L") {
             return std::make_unique<CastLightning>();
+        }
+        if (key == "P") {
+            return std::make_unique<Shoot>(entity.get_direction());
         }
         return nullptr;
     }

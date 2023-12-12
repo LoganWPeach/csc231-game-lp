@@ -23,7 +23,7 @@ namespace Monsters {
     void make_orc_ranged(std::shared_ptr<Entity> monster) {
         monster->set_sprite("orc_masked");
         monster->set_max_health(10);
-        monster->behavior = behavior;
+        monster->behavior = behavior2;
         monster->set_weapon(std::make_shared<Bow>(5));
     }
     void make_skeleton(std::shared_ptr<Entity> monster) {
